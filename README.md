@@ -2,11 +2,17 @@
 This directory contains a ruby module for accessing the FSF's ncurses
 library.
 
-Overview
-========
+Purpose of this fork
+====================
+This file is hosted primarily for use with the rbcurse gem. ncurses-ruby has
+been having a lot of problems getting installed on OSX Snow Leopard. This repo
+is hosted to help others install ncurses-ruby on SL for ruby 1.9.2.
 
-Slightly modified by Ralf Papenkordt in order to work on OS X Snow Leopard.
-You may find the gem or bz2 file on <http://github.com/rkumar/rbcurse/downloads>.
+In addition, ruby 1.9.2, no longer supports `STR2CSTR`. This required changes in ncurses_wrap.c and form_wrap.c.
+
+The original ncurses-ruby source has been slightly modified by Ralf Papenkordt
+in order to work on OS X Snow Leopard.  You may find the gem or bz2 file on
+<http://github.com/rkumar/rbcurse/downloads>.
 Try <http://github.com/downloads/rkumar/rbcurse/ncurses-1.2.4.gem>
 
 or try :
@@ -15,6 +21,9 @@ or try :
 
 If you have problems installing, or wish to help, please leave a comment for 
 Rahul Kumar on <http://totalrecall.wordpress.com/2010/08/22/ncurses-working-with-ruby-1-9-2-snow-leopard/>.
+
+Overview
+========
 
 This README file explains how to use the ncurses ruby interface. It is
 assumed that the reader has a rough understanding of what the ncurses
