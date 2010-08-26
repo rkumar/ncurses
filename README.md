@@ -30,19 +30,20 @@ variables are implemented as singleton functions of the Module
 Ncurses.
 
 This README is organized into the following parts: 
-- Overview
-- Installation and Usage
-- External Variables
-- Constants
-- Functions (and their Interfaces)
-- Module / Class Hierarchie
-- The WINDOW class
-- The panel Library
-- The form Library
-- The menu Library
-- Locale handling
-- Ncurses and Ruby Threads
-- Example programs
+
+ - Overview
+ - Installation and Usage
+ - External Variables
+ - Constants
+ - Functions (and their Interfaces)
+ - Module / Class Hierarchie
+ - The WINDOW class
+ - The panel Library
+ - The form Library
+ - The menu Library
+ - Locale handling
+ - Ncurses and Ruby Threads
+ - Example programs
 
 General Ncurses Literature
 --------------------------
@@ -191,25 +192,25 @@ namely scanw, mvscanw, wscanw, mvwscanw.  Use an array after the format string.
 The scanned values will be placed there.  Remember, you need scanf for ruby
 installed for these functions to work.
 
-Module / Class Hierarchie
-=========================
+Module / Class Hierarchies
+==========================
 
     module Ncurses
-	class WINDOW; end
-	class SCREEN; end
-	class MEVENT; end
-	module Panel 
-		class PANEL; end
-	end
-	module Form
-		class FORM; end
-		class FIELD; end
-		class FIELDTYPE; end
-	end
-	module Menu
-		class MENU; end
-		class ITEM; end
-	end
+        class WINDOW; end
+        class SCREEN; end
+        class MEVENT; end
+        module Panel 
+            class PANEL; end
+        end
+        module Form
+	    class FORM; end
+	    class FIELD; end
+	    class FIELDTYPE; end
+        end
+        module Menu
+	    class MENU; end
+	    class ITEM; end
+        end
     end
 
 
@@ -232,7 +233,7 @@ itself to the argument list.
 
 Example: If you invoke win.mvaddch(y,x,ch) on an Ncurses::WINDOW
 object, it will delegate the method call to
-Ncurses.mvwaddch(win,y,x,ch).
+    Ncurses.mvwaddch(win,y,x,ch).
 
 Other examples:
 
@@ -242,7 +243,7 @@ Other examples:
               x=[])  =>  Ncurses.getmaxyx(win,y,x)
 
     win.delwin()        =>  Ncurses.delwin(win)          # win cannot be used
-                                                      # after this call
+                                                         # after this call
 
 
 The panel Library
