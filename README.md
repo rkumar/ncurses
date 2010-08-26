@@ -1,39 +1,20 @@
-$Id: README,v 1.16 2009/05/03 14:13:27 t-peters Exp $
-------------------------------------------------------------------------
+
 This directory contains a ruby module for accessing the FSF's ncurses
 library.
-(C) 2002, 2003, 2004 Tobias Peters <t-peters@users.berlios.de>
-(C) 2004 Simon Kaczor <skaczor@cox.net>
-(C) 2005 2006 Tobias Herzke <t-peters@users.berlios.de>
-
-This module is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 2 of the License, or (at your option) any later version.
-
-This module is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
-
-You should have received a copy of the GNU Lesser General Public
-License along with this module; if not, write to the Free Software
-Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
-------------------------------------------------------------------------
 
 Overview
 ========
 
 Slightly modified by Ralf Papenkordt in order to work on OS X Snow Leopard.
-You may find the gem or bz2 file on http://github.com/rkumar/rbcurse/downloads.
-Try http://github.com/downloads/rkumar/rbcurse/ncurses-1.2.4.gem
+You may find the gem or bz2 file on <http://github.com/rkumar/rbcurse/downloads>.
+Try <http://github.com/downloads/rkumar/rbcurse/ncurses-1.2.4.gem>
 
 or try :
 
     gem install snowleopard-ncurses
 
 If you have problems installing, or wish to help, please leave a comment for 
-Rahul Kumar on http://totalrecall.wordpress.com/2010/08/22/ncurses-working-with-ruby-1-9-2-snow-leopard/.
+Rahul Kumar on <http://totalrecall.wordpress.com/2010/08/22/ncurses-working-with-ruby-1-9-2-snow-leopard/>.
 
 This README file explains how to use the ncurses ruby interface. It is
 assumed that the reader has a rough understanding of what the ncurses
@@ -71,13 +52,14 @@ introduction to ncurses before continuing with this README. Eric
 Raymond has written an introduction that should be part of the ncurses
 development package installed on your computer.
 If you'd like a gentler introduction, then you have two options:
-(1) there is a part of a chapter in "The Linux Programmer's Guide" dealing
-    with ncurses, available from www.tldp.org.  It is quite old by now,
-    but the ncurses interface has not changed since then, regarding the
-    scope of covered functions, so it is still a very good read.
+(1) there is a part of a chapter in "The Linux Programmer's Guide" dealing with
+ncurses, available from www.tldp.org.  It is quite old by now, but the ncurses
+interface has not changed since then, regarding the scope of covered functions,
+so it is still a very good read.
+
 (2) There is also an up-to-date "NCURSES-Programming-HOWTO" in the HOWTO
-    collection of the Linux Documentation Project, also available at
-    www.tldp.org, which is worth a read.
+collection of the Linux Documentation Project, also available at www.tldp.org,
+which is worth a read.
 
 You will also appreciate the extensive man-pages of ncurses, a useful
 reference while coding.
@@ -86,12 +68,13 @@ reference while coding.
 Installation and Usage
 ======================
 
-ruby extconf.rb
-make
-make install
+    ruby extconf.rb
+    make
+    make install
 
 In your programs:
-require "ncurses.rb"
+
+    require "ncurses.rb"
 
 If your programs use the scanw functions (most unlikely) you will have to
 install the scanf library for ruby (http://www.rubyhacker.com/code/scanf).
@@ -211,7 +194,7 @@ installed for these functions to work.
 Module / Class Hierarchie
 =========================
 
-module Ncurses
+    module Ncurses
 	class WINDOW; end
 	class SCREEN; end
 	class MEVENT; end
@@ -227,7 +210,7 @@ module Ncurses
 		class MENU; end
 		class ITEM; end
 	end
-end
+    end
 
 
 The WINDOW class
@@ -253,12 +236,12 @@ Ncurses.mvwaddch(win,y,x,ch).
 
 Other examples:
 
- win.printw("hello") =>  Ncurses.wprintw(win, "hello")
+    win.printw("hello") =>  Ncurses.wprintw(win, "hello")
 
- win.getmaxyx(y=[],
+    win.getmaxyx(y=[],
               x=[])  =>  Ncurses.getmaxyx(win,y,x)
 
- win.delwin()        =>  Ncurses.delwin(win)          # win cannot be used
+    win.delwin()        =>  Ncurses.delwin(win)          # win cannot be used
                                                       # after this call
 
 
@@ -283,9 +266,9 @@ method of the respective class. For example, instead of calling
 post_form(form), you can use form.post_form().
 
 Three objects are defined in the Ncurses:Form module:
-	1. FORM
-	2. FIELD
-	3. FIELDTYPE
+ 1. FORM
+ 2. FIELD
+ 3. FIELDTYPE
 
 They are wrapping actual ncurses pointers and should be use whenever a
 pointer to one of these types is expected in function calls.
@@ -315,8 +298,8 @@ method of the respective class. For example, instead of calling
 post_menu(menu), you can use menu.post_menu().
 
 Two objects are defined in the Ncurses:Menu module:
-	1. MENU
-	2. ITEM
+ 1. MENU
+ 2. ITEM
 
 They are wrapping actual ncurses pointers and should be use whenever a
 pointer to one of these types is expected in function calls.
@@ -364,3 +347,23 @@ Directory "examples" contains a few example programs demonstrating how
 to use the ncurses library with ruby.  Be sure to read the file
 "examples/LICENSES_for_examples".
 
+License
+========
+
+(C) 2002, 2003, 2004 Tobias Peters <t-peters@users.berlios.de>  
+(C) 2004 Simon Kaczor <skaczor@cox.net>  
+(C) 2005 2006 Tobias Herzke <t-peters@users.berlios.de>  
+
+This module is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2 of the License, or (at your option) any later version.
+
+This module is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this module; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
